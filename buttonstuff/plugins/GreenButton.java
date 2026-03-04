@@ -8,7 +8,6 @@ public class GreenButton extends ParentButton implements IButton {
     public GreenButton(String text, String url) {
         super(text, url);
         setBackground(Color.GREEN);
-        setForeground(Color.WHITE);
         setOpaque(true);
         setFont(getFont().deriveFont(Font.BOLD));
     }
