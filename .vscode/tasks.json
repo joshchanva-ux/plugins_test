@@ -1,0 +1,138 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Project",
+      "type": "shell",
+      "command": "javac",
+      "args": [
+        "-d",
+        "bin",
+        "buttonstuff/app/*.java",
+        "buttonstuff/buttons/*.java",
+        "buttonstuff/browser/*.java",
+        "buttonstuff/loader/*.java"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Run URLButtonDemo",
+      "type": "shell",
+      "command": "java",
+      "args": [
+        "-cp",
+        "bin",
+        "buttonstuff.app.URLButtonDemo"
+      ],
+      "dependsOn": "Build Project",
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "isBackground": false
+    },
+    {
+      "label": "Compile Plugin",
+      "type": "shell",
+      "command": "javac",
+      "args": [
+        "-cp",
+        "bin",
+        "buttonstuff/plugins/${input:pluginClassName}.java",
+        "-d",
+        "bin"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Build Plugin JAR (bash script)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "build_plugin.sh",
+        "${input:pluginClassName}"
+      ],
+      "dependsOn": "Build Project",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Build Plugin JAR (manual)",
+      "type": "shell",
+      "command": "jar",
+      "args": [
+        "cf",
+        "buttonstuff/plugins/${input:pluginClassName}.jar",
+        "-C",
+        "bin",
+        "buttonstuff/plugins/${input:pluginClassName}.class"
+      ],
+      "dependsOn": "Compile Plugin",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Create bin directory",
+      "type": "shell",
+      "command": "mkdir",
+      "args": ["-p", "bin"],
+      "presentation": {
+        "echo": false,
+        "reveal": "never"
+      }
+    },
+    {
+      "label": "Clean build output",
+      "type": "shell",
+      "command": "rm",
+      "args": ["-rf", "bin"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "pluginClassName",
+      "type": "promptString",
+      "description": "Enter the plugin class name (without .java extension)",
+      "default": "MyButton"
+    }
+  ]
+}
