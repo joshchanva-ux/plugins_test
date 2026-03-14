@@ -58,3 +58,16 @@ public class DrawButton extends ParentButton implements DButton {
                 }
             }
         };
+
+        panel.setBackground(Color.WHITE);
+        panel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                dots.add(e.getPoint());
+                panel.repaint();
+            }
+        });
+
+        return panel;
+    }
+}
