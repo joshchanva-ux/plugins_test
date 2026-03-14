@@ -1,7 +1,10 @@
 package buttonstuff.plugins;
 
-import java.awt.*;
 import buttonstuff.buttons.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+import javax.swing.*;
 
 /**
  * STUDENT TEMPLATE: Copy this file, rename it, and customize it to create your own button plugin!
