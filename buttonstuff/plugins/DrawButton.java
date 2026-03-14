@@ -25,21 +25,6 @@ public class StudentButtonTemplate extends ParentButton implements IButton {
         setFont(getFont().deriveFont(Font.BOLD));
     }
     
-    // Optional: Override actionPerformed to customize button behavior
-    // @Override
-    // public void actionPerformed(ActionEvent e) {
-    //     System.out.println("Custom button clicked!");
-    //     super.actionPerformed(e); // Still opens the URL
-    // }
-    
-    // Optional: Override reNameButton to add custom styling
-    // @Override
-    // public void reNameButton(String name) {
-    //     super.reNameButton(name);
-    //     setBackground(Color.YELLOW);
-    //     setOpaque(true);
-    // }
-    
     @Override
     public String getURL() {
         return url;
