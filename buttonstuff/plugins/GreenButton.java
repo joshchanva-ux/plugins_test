@@ -15,7 +15,7 @@ public class GreenButton extends ParentButton implements IButton {
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        setText("Changed");
+        setText("Claude is the best!");
         super.actionPerformed(e);
     }
 
