@@ -1,5 +1,6 @@
 package buttonstuff.plugins;
 
+import buttonstuff.button_interfaces.DButton;
 import buttonstuff.buttons.*;
 import java.awt.*;
 import java.awt.event.*;
