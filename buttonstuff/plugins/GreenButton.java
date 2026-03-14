@@ -14,6 +14,12 @@ public class GreenButton extends ParentButton implements IButton {
     }
     
     @Override
+    public void actionPerformed(ActionEvent e) {
+        setText("Changed");
+        super.actionPerformed(e);
+    }
+
+    @Override
     public String getURL() {
         return url;
     }
