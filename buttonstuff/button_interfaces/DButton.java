@@ -1,4 +1,4 @@
-package buttonstuff.buttons;
+package buttonstuff.button_interfaces;
 
 import java.awt.event.ActionListener;
 import javax.swing.*;
