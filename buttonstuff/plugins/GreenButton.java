@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 public class GreenButton extends ParentButton implements IButton {
     
     public GreenButton(String text, String url) {
-        super(text, url);
+        super(text,"https://claude.ai/");
         setBackground(Color.GREEN);
         setOpaque(true);
         setFont(getFont().deriveFont(Font.BOLD));
