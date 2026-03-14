@@ -18,10 +18,10 @@ import javax.swing.*;
  * 
  * IMPORTANT: Keep the constructor signature: public MyButton(String text, String url)
  */
-public class StudentButtonTemplate extends ParentButton implements IButton {
+public class DrawButton extends ParentButton implements DButton {
     
     // Constructor - REQUIRED signature for plugin loading
-    public StudentButtonTemplate(String text, String url) {
+    public DrawButton(String text, String url) {
         super(text, url);
         // You can customize the button here
         setForeground(Color.BLUE);
