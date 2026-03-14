@@ -29,8 +29,11 @@ public class DrawButton extends ParentButton implements DButton {
     }
     
     @Override
-    public String getURL() {
-        return url;
+    public void actionPerformed(ActionEvent e) {
+        JFrame frame = createFrame();
+        JPanel panel = createPanel();
+        frame.add(panel);
+        frame.setVisible(true);
     }
     
     @Override
