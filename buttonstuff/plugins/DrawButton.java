@@ -43,4 +43,8 @@ public class DrawButton extends ParentButton implements DButton {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         return frame;
     }
+
+    @Override
+    public JPanel createPanel() {
+        ArrayList<Point> dots = new ArrayList<>();
 }
