@@ -47,4 +47,14 @@ public class DrawButton extends ParentButton implements DButton {
     @Override
     public JPanel createPanel() {
         ArrayList<Point> dots = new ArrayList<>();
-}
+
+        JPanel panel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.setColor(Color.BLACK);
+                for (Point dot : dots) {
+                    g.fillOval(dot.x - 5, dot.y - 5, 10, 10);
+                }
+            }
+        };
