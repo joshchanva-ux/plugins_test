@@ -9,8 +9,8 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.awt.event.ActionListener;
 
-import buttonstuff.buttons.IButton;
-import buttonstuff.buttons.DButton;
+import buttonstuff.button_interfaces.IButton;
+import buttonstuff.button_interfaces.DButton;
 
 /**
  * PluginLoader - Dynamically loads button plugins from JAR files
